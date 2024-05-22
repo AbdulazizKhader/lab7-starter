@@ -24,13 +24,7 @@ function getRecipesFromStorage() {
 	// A9. TODO - Complete the functionality as described in this function
 	//           header. It is possible in only a single line, but should
 	//           be no more than a few lines.
-	let recipes = [];
-	for(let i = 0; i < localStorage.length; i++){
-		let key = localStorage.getKey(i);
-		let value = localStorage.getItem(key);
-		recipes[i] = value;
-	}
-	return recipes;
+	return JSON.parse(localStorage.getItem('recipes') || '[]');
 }
 
 /**
